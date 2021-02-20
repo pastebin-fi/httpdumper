@@ -4,7 +4,8 @@
   "description": " Easily inspect incoming HTTP and HTTPS requests. ",
   "main": "app.js",
   "scripts": {
-    "test": "nodemon ."
+    "test": "nodemon .",
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
