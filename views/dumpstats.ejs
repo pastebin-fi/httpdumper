@@ -14,7 +14,7 @@
     <br>
 
     <center>
-        <input type="text" id="dumpUrl" value="<%= req.headers.referer.split(':')[0] %>://<%= req.headers.host %>/dump/<%= id %>/">
+        <input type="text" id="dumpUrl" value="<%= req.protocol %>://<%= req.headers.host %>/dump/<%= id %>/">
         <button id="copyButton" onclick="copyToClipboard('dumpUrl')" class="button">Copy</button>
     </center>
 
