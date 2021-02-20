@@ -12,14 +12,21 @@ npm start
 
 ## Docker
 
-Coming soon...
-
+```sh
+docker -dp 8888:8080 pastin/httpdumper
+```
 ## Behind reverse proxy
 
 Trust proxies for example:
 
+Standalone
 ```sh
 export TRUST_PROXIES="loopback, 172.17.0.1"
+```
+
+Docker
+```
+docker -dp 8888:8080 -e TRUST_PROXIES="loopback" pastin/httpdumper
 ```
 
 Nginx configuration:
