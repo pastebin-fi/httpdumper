@@ -1,0 +1,30 @@
+{
+  "name": "httpdumper",
+  "version": "1.0.0",
+  "description": " Easily inspect incoming HTTP and HTTPS requests. ",
+  "main": "app.js",
+  "scripts": {
+    "test": "nodemon ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pastebin-fi/httpdumper.git"
+  },
+  "keywords": [
+    "HTTP",
+    "HTTPS",
+    "Dump"
+  ],
+  "author": "pastebin.fi",
+  "license": "AGPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/pastebin-fi/httpdumper/issues"
+  },
+  "homepage": "https://github.com/pastebin-fi/httpdumper#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "sqlite3": "^5.0.2",
+    "uuidv4": "^6.2.6"
+  }
+}

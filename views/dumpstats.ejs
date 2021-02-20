@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTTPDumper</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <script src="/scripts/main.js"></script>
+</head>
+<body>
+    <%- include('parts/header') %> 
+
+    <br>
+    <br>
+
+    <center>
+        <input type="text" id="dumpUrl" value="<%= req.headers.referer.split(':')[0] %>://<%= req.headers.host %>/dump/<%= id %>/">
+        <button id="copyButton" onclick="copyToClipboard('dumpUrl')" class="button">Copy</button>
+    </center>
+
+    <section>
+        <br>
+        <b>Requests: <%= rows.length %> </b>
+        <br>    
+    </section>
+
+    <% rows.forEach(row => { %>
+        <%
+            returnJson = {}
+            returnJson.useragent = row.useragent
+            returnJson.ip = row.ip
+            returnJson.query = JSON.parse(row.query)
+        %> 
+        <section>
+            <br>
+            <pre><%= JSON.stringify(returnJson, null, "\t"); %></pre>
+            <hr>
+        </section>
+    <% }); %> 
+    </body>
+</html>
