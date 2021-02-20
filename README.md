@@ -13,7 +13,7 @@ npm start
 ## Docker
 
 ```sh
-docker -dp 8888:8080 pastin/httpdumper
+docker run -dp 8888:8080 --name=httpdumper pastin/httpdumper
 ```
 ## Behind reverse proxy
 
@@ -26,7 +26,7 @@ export TRUST_PROXIES="loopback, 172.17.0.1"
 
 Docker
 ```
-docker -dp 8888:8080 -e TRUST_PROXIES="loopback" pastin/httpdumper
+docker run -dp 8888:8080 -e TRUST_PROXIES="loopback" --name=httpdumper pastin/httpdumper
 ```
 
 Nginx configuration:
