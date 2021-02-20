@@ -3,6 +3,10 @@ const app = express();
 const sqlite3 = require('sqlite3').verbose();
 const { uuid } = require('uuidv4');
 
+
+console.log("Trusting proxies: " + process.env.TRUST_PROXIES)
+app.set('trust proxy', process.env.TRUST_PROXIES)
+
 let db = new sqlite3.Database('./dumps.db', (err) => {
     if (err) {
         return console.error(err.message);
